@@ -7,4 +7,4 @@ const urlSet = {
     topics: url + '/topics',
 }
 
-module.exports = urlSet
+export default urlSet
