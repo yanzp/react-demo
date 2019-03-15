@@ -1,4 +1,6 @@
 /* Less */
+@black: #000;
+@white: #fff;
 @dark: #333;
 @gray: #666;
 @light: #999;
@@ -41,29 +43,59 @@ button {
 button:hover {
   opacity: 0.9;
 }
-@size: {
-    width: 32px;
-    height: 32px;
-};
-@radius: {
-    border-radius: 5px;
-};
+@size: { width: 32px; height: 32px; };
+@radius: { border-radius: 5px; };
+@flex: { display: flex; };
+.aItems(@i: 'center') { align-items: @i };
+.aContent(@c: 'center') { align-content: @c; };
+.container {
+    background-color: #f8f8f8;
+}
+.header {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: @black;
+    padding: 0 20px;
+    .title {
+        font-size: 16px;
+        color: @white;
+    }
+}
+.content {
+    @flex();
+    flex-direction: row;
+    .aItems('flex-start');
+}
+.nav {
+    width: 250px;
+    background-color: @white;
+    border-right: 1px solid #dfdfdf;
+    box-shadow: 5px 0 10px -5px #eee;
+    a {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 15px;
+        color: @dark;
+    }
+}
 .topics {
-    padding: 15px;
+    padding: 20px;
     .tab-header {}
     .tab {
         display: inline-block;
         padding: 5px 15px;
         cursor: pointer;
         &.active {
-            color: #fff;
+            color: @white;
             background-color: #3c99c3;
             @radius();
         }
     }
     .item {
-        display: flex;
-        align-items: center;
+        @flex();
+        .aItems;
         align-content: center;
         padding: 15px 0;
         border-bottom: 1px solid #dfdfdf;
