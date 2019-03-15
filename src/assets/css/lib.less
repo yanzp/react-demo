@@ -1,0 +1,97 @@
+/* Less */
+@dark: #333;
+@gray: #666;
+@light: #999;
+@images: "./../image";
+// background: url("@{images}/dog.png");
+html {
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: initial;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font: 14px "Microsoft YaHei"; 
+}
+a, 
+a:focus, 
+a:active,
+a:hover {
+  text-decoration: none;
+}
+input {
+  font-size: 14px;
+  font-family: 'Microsoft YaHei';
+}
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: 'Microsoft YaHei';
+}
+button:hover {
+  opacity: 0.9;
+}
+@size: {
+    width: 32px;
+    height: 32px;
+};
+@radius: {
+    border-radius: 5px;
+};
+.topics {
+    padding: 15px;
+    .tab-header {}
+    .tab {
+        display: inline-block;
+        padding: 5px 15px;
+        cursor: pointer;
+        &.active {
+            color: #fff;
+            background-color: #3c99c3;
+            @radius();
+        }
+    }
+    .item {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #dfdfdf;
+        &:hover {
+            background: #efefef;
+        }
+    }
+    .head {
+        @size();
+        @radius();
+        overflow: hidden;
+        margin-right: 15px;
+        img {
+            @size();
+        }
+    }
+    .title {
+        flex: 1;
+        cursor: pointer;
+    }
+    .msg {
+        span {
+            display: block;
+            text-align: right;
+            font-size: 13px;
+            color: @gray;
+        }
+    }
+    .count {}
+    .time {}
+}

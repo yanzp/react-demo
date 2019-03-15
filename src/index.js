@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import CombineReducers from './reducer/index';
 import React from 'react';
 import App from './view/app';
+import './assets/css/lib.less';
 
 let store = createStore(
     CombineReducers,
